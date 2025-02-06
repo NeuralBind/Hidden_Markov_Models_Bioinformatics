@@ -73,9 +73,7 @@ def forward(X,A,E):
     F = {k:[0] * L for k in allStates}
     F['B'][0] = 1
 
-    #####################
-    # START CODING HERE #
-    #####################
+
     # HINT: The Viterbi and Forward algorithm are very similar! 
     # Adapt the viterbi() function to account for the differences.
 
@@ -91,9 +89,7 @@ def forward(X,A,E):
         F['E'][-1] += term
   
         
-    #####################
-    #  END CODING HERE  #
-    #####################
+
 
     P = F['E'][-1] # The Forward probability: P(X|A,E)
     return(P,F)
@@ -161,9 +157,7 @@ def baumwelch(set_X,A,E):
         _,B = backward(X,A,E) # Forward P == Backward P, so only save the backward trellis
         SLL += log10(P)
 
-        #####################
-        # START CODING HERE #
-        #####################        
+    
         # Inside the for loop: Expectation
         # Calculate the expected transitions and emissions for the sequence.
         # Add the contributions to your posterior matrices.
@@ -222,9 +216,6 @@ def baumwelch(set_X,A,E):
                 
 
 
-    #####################
-    #  END CODING HERE  #
-    #####################
 
     return(SLL,new_A,new_E)
 
