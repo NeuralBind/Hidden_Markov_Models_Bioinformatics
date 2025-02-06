@@ -20,9 +20,7 @@ from numpy.random import choice
 
 
 def parse_args():
-    #####################
-    # START CODING HERE #
-    #####################
+    
     # Implement a simple argument parser (WITH help documentation!) that parses
     # the information needed by main() from commandline. Take a look at the
     # argparse documentation, the parser in hmm_utility.py or align.py
@@ -47,9 +45,7 @@ def parse_args():
 
 
 def generate_sequence(A,E):
-    #####################
-    # START CODING HERE #
-    #####################
+    
     # Implement a function that generates a random sequence using the choice()
     # function, given a Transition and Emission matrix.
     # Look up its documentation online:
@@ -101,10 +97,7 @@ def generate_sequence(A,E):
 
 def main():
     args = parse_args()
-    #####################
-    # START CODING HERE #
-    #####################
-
+    
     # Give a number that you want for generating
     N = args.n_seq 
     # Path to save the sequences (fasta)              
@@ -121,9 +114,6 @@ def main():
             # write it as random sequence i as name \n and the sequence
             f.write('>random_sequence_%i\n%s\n' % (i,seq))
         
-    #####################
-    #  END CODING HERE  #
-    #####################
     
 
 
