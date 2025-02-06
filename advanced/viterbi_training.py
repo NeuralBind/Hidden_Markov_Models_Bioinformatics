@@ -2,8 +2,7 @@
 
 """
 DESCRIPTION:
-    Template code for the SECOND Advanced Question of the Hidden Markov Models
-    assignment in the Algorithms in Sequence Analysis course at the VU.
+
 
 INSTRUCTIONS:
     Complete the code (compatible with Python 3!) upload to CodeGrade via
@@ -12,7 +11,7 @@ INSTRUCTIONS:
     training!
 
 AUTHOR:
-    <Theodoros Foskolos id: 2768082>
+    <Theodoros Foskolos >
 """
 
 import os.path as op
@@ -50,10 +49,7 @@ def parse_args():
 
 
 def train_viterbi(X,A,E):
-    #####################
-    # START CODING HERE #
-    #####################
-    
+  
     # Initialize your posterior matrices
     allStates = A.keys()
     emittingStates = E.keys()
@@ -111,13 +107,6 @@ def train_viterbi(X,A,E):
             for s in new_E[e]:
                 new_E[e][s] = new_E[e][s] / sum_En 
 
-    #print(new_E)
-
-
-    #####################
-    #  END CODING HERE  #
-    #####################
-    
     return new_A, new_E
 
 
@@ -133,22 +122,12 @@ def main(args = False):
     i = 0
     i_max = args.max_iter
     
-    #####################
-    # START CODING HERE #
-    #####################
-    # Iterate until you've reached i_max or until your parameters have converged!
-    # Note Viterbi converges discretely (unlike Baum-Welch), so you don't need to
-    # trafor X in enumerate(set_X):ck your Sum Log-Likelihood to decide this.
-    
-    
-    # Keep training until u reach the i max that i give(or the default one)
+
     while i < i_max:
         # Take the new A and E matrices
         A, E = train_viterbi(set_X, A, E)
         i += 1
-    #####################
-    #  END CODING HERE  #
-    #####################
+
 
     
     if args.out_dir:
